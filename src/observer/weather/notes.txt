@@ -1,0 +1,2 @@
+Observer in java.util is deprecated since java version 9
+since it didn't offer an extensive enough event model (no serialization, etc.)
