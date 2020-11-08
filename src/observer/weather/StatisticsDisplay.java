@@ -1,6 +1,6 @@
 package observer.weather;
 
-public class StatisticsDisplay implements DisplayElement {
+public class StatisticsDisplay implements DisplayElement, Subscriber {
 	private float maxTemp = 0.0f;
 	private float minTemp = 200;
 	private float tempSum= 0.0f;
@@ -9,6 +9,7 @@ public class StatisticsDisplay implements DisplayElement {
 
 	public StatisticsDisplay(WeatherData weatherData) {
 		this.weatherData = weatherData;
+		this.weatherData.subscribe(this); 
 	}
 
 	public void update(float temp, float humidity, float pressure) {

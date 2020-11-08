@@ -1,12 +1,13 @@
 package observer.weather;
 
-public class ForecastDisplay implements DisplayElement {
+public class ForecastDisplay implements DisplayElement, Subscriber {
 	private float currentPressure = 29.92f;  
 	private float lastPressure;
 	private WeatherData weatherData;
 
 	public ForecastDisplay(WeatherData weatherData) {
 		this.weatherData = weatherData;
+		weatherData.subscribe(this);
 	}
 
 	public void update(float temp, float humidity, float pressure) {
