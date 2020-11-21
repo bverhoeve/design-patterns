@@ -6,15 +6,20 @@ public class PizzaShop {
 
     public Pizza orderPizza(String type) {
 
-        // todo create code for new pizzas
+        // This code will change
+        // Dealing with which concrete class we need to instantiate
+        // is messing up our code.
         if(type.toLowerCase() == "pepperoni") {
             pizza = new PepperoniPizza();
         } else if(type.toLowerCase() == "cheese") {
             pizza = new CheesePizza();
-        }else if(type.toLowerCase() == "greek") {
-            pizza = new GreekPizza(); 
+        } else if(type.toLowerCase() == "veggie") {
+            pizza = new VeggiePizza();
+        } else if(type.toLowerCase() == "clam") {
+            pizza = new ClamPizza();
         }
 
+        // This code will stay the same
         pizza.prepare();
         pizza.bake();
         pizza.cut();
