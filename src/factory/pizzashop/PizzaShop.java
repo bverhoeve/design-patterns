@@ -2,15 +2,11 @@ package factory.pizzashop;
 
 public class PizzaShop {
 
-    private SimplePizzaFactory factory;
-
-    public PizzaShop() {
-        factory = new SimplePizzaFactory(); 
-    }
+    public PizzaShop() {}
 
     public Pizza orderPizza(String type) {
      
-       Pizza pizza = this.factory.createPizza(type); 
+       Pizza pizza = SimplePizzaFactory.createPizza(type); 
 
         // This code will stay the same
         pizza.prepare();

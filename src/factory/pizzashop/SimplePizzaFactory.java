@@ -2,7 +2,7 @@ package factory.pizzashop;
 
 public class SimplePizzaFactory {
     
-    public Pizza createPizza(String type)  {
+    public static Pizza createPizza(String type)  {
 
          if(type.toLowerCase() == "pepperoni") {
             return new PepperoniPizza();
