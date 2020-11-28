@@ -1,13 +1,12 @@
 package factory.pizzafm;
 
-public class PizzaStore {
+public abstract class PizzaStore {
 
-    public PizzaStore() {}
-
-    public Pizza orderPizza(String type) {
+    public final Pizza orderPizza(String type) {
         
-        // We'll need to change the factory that we create
-        Pizza pizza = SimplePizzaFactory.createPizza(type); 
+       Pizza pizza;
+
+       pizza = createPizza(type);
 
         // This code will stay the same
         pizza.prepare();
@@ -17,4 +16,6 @@ public class PizzaStore {
 
         return pizza;
     }
+
+    abstract Pizza createPizza(String type);
 }

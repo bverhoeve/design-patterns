@@ -4,14 +4,14 @@ public class PizzaTest {
     
     public static void main(String[] args) {
 
-        // TODO create a new NY or Chicago factory instead
-        PizzaStore shop = new PizzaStore();
-
-        Pizza pizza = shop.orderPizza("clam");
+        PizzaStore nyStore = new NYPizzaStore();
+        PizzaStore chicagoStore = new ChicagoPizzaStore();
+        
+        Pizza pizza = nyStore.orderPizza("clam");
         System.out.println("We ordered a " + pizza.getName() + "\n");
         System.out.println(pizza);
 
-        Pizza pizza2 = shop.orderPizza("veggie");
+        Pizza pizza2 = chicagoStore.orderPizza("cheese");
         System.out.println("We ordered a " + pizza2.getName() + "\n");
         System.out.println(pizza2);
 
