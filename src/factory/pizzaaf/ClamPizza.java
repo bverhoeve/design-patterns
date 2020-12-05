@@ -1,11 +1,17 @@
 package factory.pizzaaf;
 
 public class ClamPizza extends Pizza {
-	public ClamPizza() {
-		name = "Clam Pizza";
-		dough = "Thin crust";
-		sauce = "White garlic sauce";
-		toppings.add("Clams");
-		toppings.add("Grated parmesan cheese");
+	PizzaIngredientFactory ingredientFactory;
+
+	public ClamPizza(PizzaIngredientFactory ingredientFactory) {
+		this.ingredientFactory = ingredientFactory;
+	}
+
+	public void prepare() {
+		System.out.println("Preparing " + this.name);
+		this.dough = ingredientFactory.createDough();
+		this.sauce = ingredientFactory.createSauce();
+		this.cheese = ingredientFactory.createCheese();
+		this.clam = ingredientFactory.createClams();
 	}
 }

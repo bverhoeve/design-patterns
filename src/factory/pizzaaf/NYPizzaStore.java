@@ -1,19 +1,31 @@
 package factory.pizzaaf;
 
-public class NYPizzaStore extends PizzaStore{
-    
+public class NYPizzaStore extends PizzaStore {
+
+    PizzaIngredientFactory ingredientFactory;
+
+    public NYPizzaStore() {
+        this.ingredientFactory = new NYPizzaIngredientFactory();
+    }
+
     public Pizza createPizza(String type) {
 
+        Pizza pizza = null;
+
         if (type.equals("cheese")) {
-            return new NYStyleCheesePizza();
+            pizza = new CheesePizza(this.ingredientFactory);
+            pizza.setName("New York Style Cheese Pizza");
         } else if (type.equals("veggie")) {
-            return new NYStyleVeggiePizza();
+            pizza = new VeggiePizza(this.ingredientFactory);
+            pizza.setName("New York Style Veggie Pizza");
         } else if(type.equals("clam")) {
-            return new NYStyleClamPizza();
+            pizza = new ClamPizza(this.ingredientFactory);
+            pizza.setName("New York Style Clam Pizza");
         } else if(type.equals("pepperoni")) {
-            return new NYStylePepperoniPizza();
+            pizza = new PepperoniPizza(this.ingredientFactory);
+            pizza.setName("New York Style Pepperoni Pizza");
         }
 
-        return null; 
+        return pizza; 
     }
 }

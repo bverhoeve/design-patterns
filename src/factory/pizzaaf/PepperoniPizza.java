@@ -1,11 +1,18 @@
 package factory.pizzaaf;
 
 public class PepperoniPizza extends Pizza {
-    public PepperoniPizza() {
-		name = "Pepperoni Pizza";
-		dough = "Regular Crust";
-		sauce = "Tomato sauce";
-		toppings.add("Pepperoni");
-		toppings.add("Parmesan");
+  
+   PizzaIngredientFactory ingredientFactory;
+
+	public PepperoniPizza(PizzaIngredientFactory ingredientFactory) {
+		this.ingredientFactory = ingredientFactory;
+	}
+
+	public void prepare() {
+		System.out.println("Preparing " + this.name);
+		dough = ingredientFactory.createDough();
+		sauce = ingredientFactory.createSauce();
+		cheese = ingredientFactory.createCheese();
+		pepperoni = ingredientFactory.createPepperoni(); 
 	}
 }
