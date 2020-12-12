@@ -11,6 +11,9 @@ public class HomeTheaterTestDrive {
 		Screen screen = new Screen("Theater Screen");
 		PopcornPopper popper = new PopcornPopper("Popcorn Popper");
  
-		
+		HomeTheaterFacade facade = new HomeTheaterFacade(amp, cd, popper, projector, screen, player, lights, tuner);
+
+		facade.watchMovie("Batman");
+		facade.endMovie();
 	}
 }
