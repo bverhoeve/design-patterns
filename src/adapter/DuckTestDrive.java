@@ -10,12 +10,17 @@ public class DuckTestDrive {
 
 		Turkey turkey = new WildTurkey();
 
+		Duck turkeyAdapter = new TurkeyAdapter(turkey);
+
 		System.out.println("The Turkey says...");
 		turkey.gobble();
 		turkey.fly();
 
 		System.out.println("\nThe Duck says...");
 		testDuck(duck);
+
+		System.out.println("\nThe TurkeyAdapter says...");
+		testDuck(turkeyAdapter);
 
 		// Challenge
 		Drone drone = new SuperDrone();
