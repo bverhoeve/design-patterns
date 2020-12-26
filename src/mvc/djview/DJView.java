@@ -4,9 +4,9 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class DJView implements ActionListener  {//BeatObserver, BPMObserver {
-	//BeatModelInterface model;
-	// ControllerInterface controller;
+public class DJView implements ActionListener, BeatObserver, BPMObserver {
+	BeatModelInterface model;
+	ControllerInterface controller;
     JFrame viewFrame;
     JPanel viewPanel;
 	BeatBar beatBar;
@@ -26,13 +26,19 @@ public class DJView implements ActionListener  {//BeatObserver, BPMObserver {
     public DJView() {
 
     }
-    /*
+
+    public DJView(BeatModelInterface model) {
+        this.model = model;
+        model.registerObserver((BeatObserver) this);
+        model.registerObserver((BPMObserver) this);
+    }
+    
     public DJView(ControllerInterface controller, BeatModelInterface model) {	
 		this.controller = controller;
 		this.model = model;
 		model.registerObserver((BeatObserver)this);
 		model.registerObserver((BPMObserver)this);
-    }*/
+    }
     
     public void createView() {
 		// Create all Swing components here
@@ -67,8 +73,8 @@ public class DJView implements ActionListener  {//BeatObserver, BPMObserver {
         startMenuItem = new JMenuItem("Start");
         menu.add(startMenuItem);
 
-        // TODO uncomment
-        //startMenuItem.addActionListener((event) -> controller.start());
+        
+        startMenuItem.addActionListener((event) -> controller.start());
 
         // was....
         /*
@@ -80,8 +86,7 @@ public class DJView implements ActionListener  {//BeatObserver, BPMObserver {
         */
         stopMenuItem = new JMenuItem("Stop");
         menu.add(stopMenuItem); 
-        // TODO uncomment
-        //stopMenuItem.addActionListener((event) -> controller.stop());
+        stopMenuItem.addActionListener((event) -> controller.stop());
 
         // was...
         /*
@@ -92,7 +97,7 @@ public class DJView implements ActionListener  {//BeatObserver, BPMObserver {
         });
         */
         JMenuItem exit = new JMenuItem("Quit");
-        exit.addActionListener((event) -> System.exit(0));
+        exit.addActionListener((event) -> controller.quit());
         // was...
         /*
         exit.addActionListener(new ActionListener() {
@@ -165,19 +170,17 @@ public class DJView implements ActionListener  {//BeatObserver, BPMObserver {
 			} else {
 				bpm = Integer.parseInt(bpmTextField.getText());
             }
-            // TODO
-        	//controller.setBPM(bpm);
+            
+        	controller.setBPM(bpm);
 		} else if (event.getSource() == increaseBPMButton) {
-            // TODO
-			//controller.increaseBPM();
+			controller.increaseBPM();
 		} else if (event.getSource() == decreaseBPMButton) {
-            // TODO
-			//controller.decreaseBPM();
+			controller.decreaseBPM();
 		}
     }
 
 	public void updateBPM() {
-        /*
+        
 		if (model != null) {
 			int bpm = model.getBPM();
 			if (bpm == 0) {
@@ -189,7 +192,7 @@ public class DJView implements ActionListener  {//BeatObserver, BPMObserver {
         			bpmOutputLabel.setText("Current BPM: " + model.getBPM());
 				}
 			}
-		}*/
+		}
 	}
   
 	public void updateBeat() {
