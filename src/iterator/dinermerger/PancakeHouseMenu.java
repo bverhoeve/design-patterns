@@ -37,9 +37,9 @@ public class PancakeHouseMenu {
 		menuItems.add(menuItem);
 	}
  
-	public List<MenuItem> getMenuItems() {
-		return menuItems;
-	}
+	public Iterator createIterator() {
+		return new PancakeHouseMenuIterator(menuItems);
+	}	
   
 	public String toString() {
 		return "Objectville Pancake House Menu";

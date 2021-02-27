@@ -10,7 +10,7 @@ public class MenuTestDrive {
 		Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
 		waitress.printMenu();
 		
-		printMenus();
+		// printMenus();
 	}
 	
 	/*

@@ -10,8 +10,20 @@ public class Waitress {
 	}
  
 	public void printMenu() {
-		// Prints every item on the menu
+		Iterator pancakeIterator = pancakeHouseMenu.createIterator();
+		Iterator dinerIterator = dinerMenu.createIterator();
 
+		System.out.println("Menu\n---\nBreakfast");
+		printMenu(pancakeIterator);
+		System.out.println("Menu\n---\nLunch");
+		printMenu(dinerIterator);
+	}
+
+	public void printMenu(Iterator iterator) {
+		while(iterator.hasNext()) {
+			MenuItem item = iterator.next();
+			System.out.println(item.toString());
+		}
 	}
  
 	public void printVegetarianMenu() {
@@ -23,10 +35,10 @@ public class Waitress {
 	}
 
 	public void printBreakfastMenu() {
-		
+		// TODO
 	}
 
 	public void isItemVegetarian(String name) {
-
+		// TODO
 	}
 }
