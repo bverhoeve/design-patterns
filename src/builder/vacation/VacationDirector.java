@@ -1,5 +1,7 @@
 package builder.vacation;
 
+// This is a comment
+
 public class VacationDirector {
 	public static void main(String[] args) {
 		VacationBuilder outdoorsyVacationBuilder = new OutdoorsVacationBuilder();
