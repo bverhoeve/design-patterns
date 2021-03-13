@@ -1,4 +1,4 @@
-package .command.remote;
+package command.remote;
 
 public class Stereo {
 	String location;
