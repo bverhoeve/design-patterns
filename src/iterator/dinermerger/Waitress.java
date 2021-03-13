@@ -1,5 +1,7 @@
 package iterator.dinermerger;
 
+import java.util.Iterator;
+
 public class Waitress {
 	PancakeHouseMenu pancakeHouseMenu;
 	DinerMenu dinerMenu;
