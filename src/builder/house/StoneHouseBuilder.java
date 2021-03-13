@@ -8,8 +8,8 @@ public class StoneHouseBuilder extends HouseBuilder {
 	String interiorWallMaterial = "Stone, 1 foot thick";
 	String roofMaterial = "Tile";
 	public StoneHouseBuilder() {
-		this.builderName = "Stone House Builder";
-		setHouseType(HouseType.STONE);
+		this.name = "Stone House Builder";
+		house.setHouseType(HouseType.STONE);
 	}
 	public HouseBuilder addWalls() {
 		// Add 4 exterior walls
@@ -29,5 +29,10 @@ public class StoneHouseBuilder extends HouseBuilder {
 	public HouseBuilder addRoof() {
 		house.addRoof(new Roof(roofMaterial));
 		return this;
+	}
+	@Override
+	public House build() {
+		
+		return house;
 	}
 }

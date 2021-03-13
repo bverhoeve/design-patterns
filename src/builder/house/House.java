@@ -1,7 +1,7 @@
 package builder.house;
 
-import builder.house.HouseBuilder.HouseType;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class House {
 	String name;
@@ -18,8 +18,11 @@ public class House {
 		this.houseType = houseType;
 		switch (houseType) {
 			case STONE: this.name = "My stone house";
+			break;
 			case WOOD: this.name = "My wood house";
+			break;
 			case GINGERBREAD: this.name = "My holiday gingerbread house";
+
 		}
 		return this;
 	}

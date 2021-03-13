@@ -1,4 +1,4 @@
-package singleton.threadsafe;
+package singleton.treadsafe;
 
 public class SyncSingleton {
 

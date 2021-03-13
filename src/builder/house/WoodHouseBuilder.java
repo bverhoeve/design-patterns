@@ -1,6 +1,5 @@
 package builder.house;
 
-import builder.house.HouseBuilder.HouseType;
 
 public class WoodHouseBuilder extends HouseBuilder {
 	int numWalls = 6;     // 4 exterior walls, 2 interior
@@ -10,8 +9,8 @@ public class WoodHouseBuilder extends HouseBuilder {
 	String interiorWallMaterial = "Wood, 2x4";
 	String roofMaterial = "Metal";
 	public WoodHouseBuilder() {
-		this.builderName = "Wood House Builder";
-		setHouseType(HouseType.WOOD);
+		this.name = "Wood House Builder";
+		house.setHouseType(HouseType.WOOD);
 	}
 	public HouseBuilder addWalls() {
 		// add exterior walls
@@ -33,5 +32,11 @@ public class WoodHouseBuilder extends HouseBuilder {
 	public HouseBuilder addRoof() {
 		house.addRoof(new Roof(roofMaterial));
 		return this;
+	}
+	
+	@Override
+	public House build() {
+		
+		return house;
 	}
 }

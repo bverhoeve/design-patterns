@@ -1,6 +1,8 @@
 package iterator.dinermerger;
 
-public class DinerMenuIterator implements Iterator  {
+import java.util.Iterator;
+
+public class DinerMenuIterator implements Iterator<MenuItem>  {
     private MenuItem[] items;
     int position;
     

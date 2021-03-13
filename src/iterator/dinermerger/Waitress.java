@@ -27,18 +27,44 @@ public class Waitress {
 	}
  
 	public void printVegetarianMenu() {
-		// Print the vegetarian menu
+		Iterator pancakeIterator = pancakeHouseMenu.createIterator();
+		Iterator dinerIterator = dinerMenu.createIterator();
+		
+	while(dinerIterator.hasNext() && pancakeIterator.hasNext()) {
+			
+			MenuItem panItem = pancakeIterator.next();
+			MenuItem dinerItem = dinerIterator.next();
+			
+			if(isItemVegetarian(panItem)) {
+				System.out.println(panItem.toString());
+			}
+			
+			if(isItemVegetarian(dinerItem)) {
+				System.out.println(dinerItem.toString());
+			}
+		}
+		
 	}
+		
+	
  
 	public void printLunchMenu() {
-		// Print the lunch menu
+		Iterator dinerIterator = dinerMenu.createIterator();
+
+		printMenu(dinerIterator);
+		
 	}
 
 	public void printBreakfastMenu() {
-		// TODO
+		Iterator panIterator = pancakeHouseMenu.createIterator();
+
+		printMenu(panIterator);	
 	}
 
-	public void isItemVegetarian(String name) {
-		// TODO
+	public boolean isItemVegetarian(MenuItem item) {
+		
+		return item.vegetarian;
+	
+		
 	}
 }

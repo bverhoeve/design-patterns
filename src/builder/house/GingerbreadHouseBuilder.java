@@ -1,7 +1,5 @@
 package builder.house;
 
-import builder.house.HouseBuilder.HouseType;
-
 public class GingerbreadHouseBuilder extends HouseBuilder {
 	int numWalls = 4;
 	int numWindows = 4;
@@ -9,9 +7,11 @@ public class GingerbreadHouseBuilder extends HouseBuilder {
 	String wallMaterial = "Gingerbread";
 	String roofMaterial = "Twizzlers";
 	public GingerbreadHouseBuilder() {
-		this.builderName = "Gingerbread House Builder";
-		setHouseType(HouseType.GINGERBREAD);
+		this.name = "Gingerbread House Builder";
+		house.setHouseType(HouseType.GINGERBREAD);
 	}
+	
+	@Override
 	public HouseBuilder addWalls() {
 		// add exterior walls
 		for (int i = 0; i < numWalls; i++) {
@@ -19,14 +19,25 @@ public class GingerbreadHouseBuilder extends HouseBuilder {
 		}
 		return this;
 	}
+	
+	@Override
 	public HouseBuilder addWindows() {
 		for (int i = 0; i < numWindows; i++) {
 			house.addWindow(new Window(windowMaterial));
 		}
 		return this;
 	}
+
+	@Override
 	public HouseBuilder addRoof() {
 		house.addRoof(new Roof(roofMaterial));
 		return this;
 	}
+	
+
+	@Override
+	public House build() {
+		return house;
+	}
+
 }

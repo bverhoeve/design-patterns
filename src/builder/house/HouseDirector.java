@@ -14,17 +14,17 @@ public class HouseDirector {
 		// The Director calls the methods in the correct order to build a house. 
 		// Could make this a lot more complicated to allow number of walls, windows, to be passed in.
 		
-		// HouseBuilder woodHouseBuilder = new WoodHouseBuilder();
-		// House woodHouse = woodHouseBuilder.addWalls().addWindows().addRoof().build();
-		// System.out.println(woodHouse);
+		 HouseBuilder woodHouseBuilder = new WoodHouseBuilder();
+		 House woodHouse = woodHouseBuilder.addWalls().addWindows().addRoof().build();
+		 System.out.println(woodHouse);
 		
-		// HouseBuilder stoneHouseBuilder = new StoneHouseBuilder();
-		// House stoneHouse = stoneHouseBuilder.addWalls().addWindows().addRoof().build();
-		// System.out.println(stoneHouse);
+		 HouseBuilder stoneHouseBuilder = new StoneHouseBuilder();
+		 House stoneHouse = stoneHouseBuilder.addWalls().addWindows().addRoof().build();
+		 System.out.println(stoneHouse);
 		
-		// HouseBuilder gingerbreadHouseBuilder = new GingerbreadHouseBuilder();
-		// House gingerbreadHouse = gingerbreadHouseBuilder.addWalls().addWindows().addRoof().build();
-		// System.out.println(gingerbreadHouse);
+		 HouseBuilder gingerbreadHouseBuilder = new GingerbreadHouseBuilder();
+		 House gingerbreadHouse = gingerbreadHouseBuilder.addWalls().addWindows().addRoof().build();
+		System.out.println(gingerbreadHouse);
 		
 		// Builder has similarities to Abstract Factory.
 		// But difference is that Builder provides a step by step API for building a product;
