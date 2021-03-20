@@ -10,14 +10,13 @@ public class TVOffCommand implements Command {
 
 	@Override
 	public void execute() {
-		tv.on();
-		tv.setInputChannel();
-		
+		tv.off();
 	}
 
 	@Override
 	public void undo() {
-		tv.off();
+		tv.on();
+		tv.setInputChannel();
 		
 	}
 	

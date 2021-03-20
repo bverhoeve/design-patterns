@@ -13,6 +13,7 @@ public class StereoOnCommand implements Command {
 	public void execute() {
 		stereo.on();
 		stereo.setVolume(15);
+		
 		if(input.toLowerCase().equals("radio")) {
 			stereo.setRadio();
 		} if(input.toLowerCase().equals("cd")) {
