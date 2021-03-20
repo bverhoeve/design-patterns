@@ -23,7 +23,7 @@ public class Waitress {
 
 	public void printMenu(Iterator iterator) {
 		while(iterator.hasNext()) {
-			MenuItem item = iterator.next();
+			MenuItem item = (MenuItem) iterator.next();
 			System.out.println(item.toString());
 		}
 	}
@@ -34,8 +34,8 @@ public class Waitress {
 		
 	while(dinerIterator.hasNext() && pancakeIterator.hasNext()) {
 			
-			MenuItem panItem = pancakeIterator.next();
-			MenuItem dinerItem = dinerIterator.next();
+			MenuItem panItem = (MenuItem) pancakeIterator.next();
+			MenuItem dinerItem = (MenuItem) dinerIterator.next();
 			
 			if(isItemVegetarian(panItem)) {
 				System.out.println(panItem.toString());
